@@ -1,6 +1,8 @@
 package com.itgenius.springdemo.controllers
 
 import com.itgenius.springdemo.models.Demodata
+import jakarta.validation.Valid
+import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
@@ -38,7 +40,7 @@ class DemoController {
     }
 
     @PostMapping("/demodata")
-    fun createDemoDataById(@RequestBody demodata:Demodata):Demodata {
+    fun createDemoDataById( @RequestBody demodata:Demodata):Demodata {
         return demodata
     }
 
@@ -53,5 +55,10 @@ class DemoController {
 //            name: "CopyValue"
 //        };
         return demodata.copy(id=id, name = "CopyValue") //คล้ายๆ update ใน js
+    }
+
+    @DeleteMapping("/demodata/{id}")
+    fun deleteDemoDataById(@PathVariable id:Int):String {
+        return "Delete demodata ID: $id"
     }
 }
