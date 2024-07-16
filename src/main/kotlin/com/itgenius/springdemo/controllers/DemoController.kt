@@ -22,7 +22,7 @@ class DemoController {
     fun getDemoData():List<Demodata> {
         return  listOf(
             Demodata(1,"Art", "chaiyaphat@gmail.com","09988848484","123 bank"),
-            Demodata(1,"Art", "chaiyaphat@gmail.com","09988848484","123 bank"),
+            Demodata(2,"Jane", "chaiyaphat@gmail.com","09988848484","123 bank"),
         )
     }
 }
